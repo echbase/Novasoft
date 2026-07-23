@@ -33,12 +33,28 @@ async function fromUrl() {
   }
 }
 
+/* md5 (8 premiers hex) attendus par fragment — pour localiser toute corruption */
+const FRAGMENT_MD5 = {
+  '00': '4228d8f1', '01': '8f4030d2', '02': '7d5c861b', '03': '5a8cd014',
+  '04': '5bad2459', '05': '2a2735f9', '06': 'b5250685', '07': '9ca08cee',
+  '08': '3404d345', '09': '26070f5e', '10': 'd5ab7fc9', '11': '500a1878',
+  '12': '965f3bf6', '13': '71cfa779', '14': '9484b6ea',
+};
+
 function fromFragments() {
   try {
     const parts = readdirSync('logo-parts')
       .filter((f) => f.endsWith('.b64.txt'))
       .sort();
-    const b64 = parts.map((f) => readFileSync(`logo-parts/${f}`, 'utf8').replace(/\s/g, '')).join('');
+    let b64 = '';
+    for (const f of parts) {
+      const id = f.replace('.b64.txt', '');
+      const content = readFileSync(`logo-parts/${f}`, 'utf8').replace(/\s/g, '');
+      const h = md5(content).slice(0, 8);
+      const good = h === FRAGMENT_MD5[id];
+      console.log(`[fragment ${id}] len=${content.length} md5=${h} attendu=${FRAGMENT_MD5[id]} ${good ? 'OK' : 'CORROMPU'}`);
+      b64 += content;
+    }
     const buf = Buffer.from(b64, 'base64');
     console.log(`[assemble-logo] fragments : ${parts.length} fichiers, ${buf.length} octets, md5=${md5(buf)}`);
     return isValid(buf) ? buf : null;
