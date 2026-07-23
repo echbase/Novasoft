@@ -883,6 +883,57 @@ section[id] {
   animation: pulse 1.6s ease-in-out infinite;
 }
 
+/* ════════════ Pages légales ════════════ */
+.legal-body h2 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 38px 0 12px;
+}
+.legal-body h2:first-child {
+  margin-top: 0;
+}
+.legal-body p {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+.legal-body strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.legal-body ul {
+  margin: 0 0 14px;
+  padding-left: 20px;
+  list-style: disc;
+  color: var(--muted);
+  font-size: 15px;
+}
+.legal-body li {
+  margin-bottom: 6px;
+}
+.legal-body a {
+  color: var(--cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.legal-body a:hover {
+  color: var(--text);
+}
+.legal-body em {
+  color: var(--amber);
+  font-style: normal;
+}
+.footer-legal a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.footer-legal a:hover,
+.footer-legal a:focus-visible {
+  color: var(--text);
+}
+
 /* ════════════ Reveal (contenu visible sans JS) ════════════ */
 .js .reveal {
   opacity: 0;
