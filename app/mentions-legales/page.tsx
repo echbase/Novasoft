@@ -6,11 +6,6 @@ export const metadata: Metadata = {
   description: 'Mentions légales du site NovaSoft — Digital Xperience.',
 };
 
-/*
- * ⚠ Les champs entre crochets sont des emplacements à compléter avec les
- * informations officielles de NovaSoft Ltd (BRN, siège, publication).
- * Ne pas mettre le site en avant commercialement tant qu'ils ne sont pas remplis.
- */
 export default function MentionsLegales() {
   return (
     <LegalShell title="Mentions légales" updated="23 juillet 2026">
@@ -20,9 +15,9 @@ export default function MentionsLegales() {
         <strong>NovaSoft Ltd</strong>, société de droit mauricien.
       </p>
       <ul>
-        <li>Siège social : <em>[adresse du siège — à compléter]</em></li>
-        <li>Numéro d&apos;enregistrement (BRN) : <em>[à compléter]</em></li>
-        <li>Directeur de la publication : <em>[à compléter]</em></li>
+        <li>Siège social : Pereybere 30546, République de Maurice</li>
+        <li>Numéro d&apos;enregistrement commercial (BRN) : C25226236</li>
+        <li>Directeur de la publication : la direction de NovaSoft Ltd</li>
         <li>
           Contact : <a href="mailto:contact@novasoft.mu">contact@novasoft.mu</a>
         </li>
