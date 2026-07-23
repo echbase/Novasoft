@@ -40,6 +40,13 @@
 html {
   scroll-behavior: smooth;
 }
+/* Lenis actif → il pilote le défilement, on neutralise le smooth natif */
+html.lenis {
+  scroll-behavior: auto;
+}
+html.lenis body {
+  overscroll-behavior: none;
+}
 body {
   background: var(--bg);
   color: var(--text);

@@ -14,7 +14,7 @@ export default function Hero() {
           au cœur de chaque décision.
         </p>
         <div className="reveal d3 mt-10 flex flex-wrap gap-4">
-          <a className="btn btn--primary" href="#contact">
+          <a className="btn btn--primary" href="#contact" data-magnetic>
             Lancer votre projet
           </a>
           <a className="btn btn--ghost" href="#expertises">

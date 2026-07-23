@@ -14,10 +14,16 @@ attribute vec2 a;
 void main(){ gl_Position = vec4(a,0.,1.); }
 `;
 
+/*
+ * `s` = progression de scroll 0→1 : la dominante chromatique évolue
+ * en descendant la page (magenta au hero → cyan au milieu → ambre en bas),
+ * en conservant le rendu exact de la référence en haut de page (s=0).
+ */
 const FRAG = `
 precision mediump float;
 uniform vec2 r;
 uniform float t;
+uniform float s;
 float h(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453); }
 float n(vec2 p){
   vec2 i=floor(p); vec2 f=fract(p); f=f*f*(3.-2.*f);
@@ -34,11 +40,14 @@ void main(){
   float T = t*.045;
   float q = fbm(p + vec2(T*.6,-T*.4));
   float w = fbm(p + q + vec2(T*.3, T*.5));
+  float wm = .36*(1.05-.75*s);
+  float wc = .34*(.85+.85*smoothstep(.12,.55,s));
+  float wa = .16+.34*smoothstep(.55,1.,s);
   vec3 col = vec3(.027,.027,.059);
   col = mix(col, vec3(.482,.247,.894), smoothstep(.35,.9,w)*.42);
-  col = mix(col, vec3(.902,.098,.839), smoothstep(.55,.98,fbm(p*1.3 - w + T*.22))*.36);
-  col = mix(col, vec3(.173,.722,.925), smoothstep(.5,.96,fbm(p*.9 + w - T*.16))*.34);
-  col = mix(col, vec3(1.,.702,.125), smoothstep(.74,.99,fbm(p*1.7 + q + T*.1))*.16);
+  col = mix(col, vec3(.902,.098,.839), smoothstep(.55,.98,fbm(p*1.3 - w + T*.22))*wm);
+  col = mix(col, vec3(.173,.722,.925), smoothstep(.5,.96,fbm(p*.9 + w - T*.16))*wc);
+  col = mix(col, vec3(1.,.702,.125), smoothstep(.74,.99,fbm(p*1.7 + q + T*.1))*wa);
   float v = smoothstep(1.25,.3,length(uv-.5));
   col *= mix(.7,1.06,v);
   gl_FragColor = vec4(col,1.);
@@ -98,8 +107,10 @@ export default function AuroraBackground() {
 
       const uR = gl.getUniformLocation(prog, 'r');
       const uT = gl.getUniformLocation(prog, 't');
+      const uS = gl.getUniformLocation(prog, 's');
       const SCALE = 0.5; /* demi-résolution pour la perf mobile */
 
+      let maxScroll = 1;
       resize = () => {
         const w = Math.max(2, Math.floor(window.innerWidth * SCALE));
         const h = Math.max(2, Math.floor(window.innerHeight * SCALE));
@@ -107,8 +118,10 @@ export default function AuroraBackground() {
         cv.height = h;
         gl.viewport(0, 0, w, h);
         gl.uniform2f(uR, w, h);
+        maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
       };
       window.addEventListener('resize', resize);
+      window.addEventListener('load', resize);
       resize();
 
       /* Première frame immédiate (visuel présent dès le chargement),
@@ -117,15 +130,20 @@ export default function AuroraBackground() {
          pour un fond en mouvement lent. */
       const t0 = performance.now();
       let last = 0;
+      let sCur = 0; /* progression lissée pour éviter tout à-coup chromatique */
       const draw = (now: number) => {
         raf = requestAnimationFrame(draw);
         if (now - last < 33) return;
         last = now;
+        const sTarget = Math.min(1, Math.max(0, (window.scrollY || 0) / maxScroll));
+        sCur += (sTarget - sCur) * 0.06;
         gl.uniform1f(uT, (now - t0) / 1000);
+        gl.uniform1f(uS, sCur);
         gl.drawArrays(gl.TRIANGLES, 0, 3);
       };
 
       gl.uniform1f(uT, 0);
+      gl.uniform1f(uS, 0);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
 
       let started = false;
@@ -156,7 +174,10 @@ export default function AuroraBackground() {
         window.removeEventListener('touchstart', start);
         window.removeEventListener('keydown', start);
         document.removeEventListener('visibilitychange', onVisibility);
-        if (resize) window.removeEventListener('resize', resize);
+        if (resize) {
+          window.removeEventListener('resize', resize);
+          window.removeEventListener('load', resize);
+        }
       };
     } catch {
       setFailed(true);

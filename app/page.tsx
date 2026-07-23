@@ -8,6 +8,7 @@ import Works from '@/components/Works';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import RevealObserver from '@/components/RevealObserver';
+import ScrollExperience from '@/components/ScrollExperience';
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
       </main>
       <Footer />
       <RevealObserver />
+      <ScrollExperience />
     </>
   );
 }
