@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Logo from './Logo';
 
 const LINKS = [
   { href: '#expertises', label: 'Expertises' },
@@ -53,7 +52,8 @@ export default function Nav() {
     <>
       <nav className={`nav${scrolled ? ' scrolled' : ''}`} aria-label="Navigation principale">
         <a className="flex items-center gap-3 text-ink no-underline" href="#top">
-          <Logo id="logo-nav" />
+          {/* Emblème officiel (PNG original fourni, fond transparent, 256px pour le retina) */}
+          <img src="/logo-emblem.png" alt="" width={38} height={38} aria-hidden="true" />
           <span>
             <b className="block font-display text-[19px] font-bold tracking-[.02em] leading-tight">
               NovaSoft
