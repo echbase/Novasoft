@@ -132,7 +132,7 @@ const PROJECTS: Project[] = [
     domain: 'tradygo.io',
     tag: 'Fintech · Trading',
     title: 'TradyGo',
-    desc: "Plateforme de trading nouvelle génération : données en temps réel, exécution rapide et interface pensée pour la décision.",
+    desc: "Signaux de trading filtrés et robot MT5 autonome : agrégation multi-analystes, scoring continu des stratégies et exécution automatisée 24/7.",
     variant: 'proj--trade',
     delay: 'd3',
     scene: <SceneTrade />,
