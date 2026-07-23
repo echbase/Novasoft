@@ -1,49 +1,52 @@
 /*
- * Emblème officiel NovaSoft — version vectorielle du logo fourni :
- * 3 nœuds (magenta, cyan, ambre) reliés par 3 arcs en dégradé,
- * 3 points intermédiaires dans les césures. Rendu net à toute densité
- * d'écran, couleurs héritées des tokens de la charte.
+ * Emblème officiel NovaSoft — vectorisation fidèle du logo PNG fourni.
+ * 3 branches continues (nœud + tige + arc épais), dégradé propre à chaque
+ * branche, anneau intérieur sur les nœuds, 3 points dans les césures.
+ * Couleurs dérivées des tokens (color-mix pour l'indigo et l'orange).
  */
 export default function Logo({ id = 'g', size = 36 }: { id?: string; size?: number }) {
   return (
     <svg viewBox="0 0 100 100" fill="none" aria-hidden="true" width={size} height={size}>
       <defs>
-        <linearGradient id={`${id}-m`} x1="30" y1="30" x2="72" y2="46" gradientUnits="userSpaceOnUse">
+        {/* Branche haute : magenta → violet */}
+        <linearGradient id={`${id}-m`} x1="32" y1="34" x2="68" y2="42" gradientUnits="userSpaceOnUse">
           <stop stopColor="var(--magenta)" />
           <stop offset="1" stopColor="var(--violet)" />
         </linearGradient>
-        <linearGradient id={`${id}-c`} x1="20" y1="48" x2="46" y2="80" gradientUnits="userSpaceOnUse">
+        {/* Branche gauche : cyan clair → indigo */}
+        <linearGradient id={`${id}-c`} x1="20" y1="50" x2="48" y2="80" gradientUnits="userSpaceOnUse">
           <stop stopColor="var(--cyan)" />
-          <stop offset="1" stopColor="var(--violet)" />
+          <stop offset="1" style={{ stopColor: 'color-mix(in srgb, var(--cyan) 40%, var(--violet))' }} />
         </linearGradient>
-        <linearGradient id={`${id}-a`} x1="86" y1="84" x2="60" y2="42" gradientUnits="userSpaceOnUse">
-          <stop stopColor="var(--amber)" />
-          <stop offset="1" stopColor="var(--magenta)" />
+        {/* Branche droite : orange → ambre doré */}
+        <linearGradient id={`${id}-a`} x1="74" y1="46" x2="82" y2="82" gradientUnits="userSpaceOnUse">
+          <stop style={{ stopColor: 'color-mix(in srgb, var(--amber) 62%, var(--magenta))' }} />
+          <stop offset="1" stopColor="var(--amber)" />
         </linearGradient>
       </defs>
 
-      {/* Arcs brisés autour du centre (50,54), rayon 24 */}
-      <path d="M 34.6 35.6 A 24 24 0 0 1 65.4 35.6" stroke={`url(#${id}-m)`} strokeWidth="9" strokeLinecap="round" />
-      <path d="M 26.4 49.8 A 24 24 0 0 0 41.8 76.6" stroke={`url(#${id}-c)`} strokeWidth="9" strokeLinecap="round" />
-      <path d="M 58.2 76.6 A 24 24 0 0 0 73.6 49.8" stroke={`url(#${id}-a)`} strokeWidth="9" strokeLinecap="round" />
+      {/* Arcs épais (~66°) autour du centre (50,54), rayon 24, césures nettes */}
+      <path d="M 36.9 33.9 A 24 24 0 0 1 63.1 33.9" stroke={`url(#${id}-m)`} strokeWidth="11" strokeLinecap="round" />
+      <path d="M 26 52.7 A 24 24 0 0 0 39.1 75.4" stroke={`url(#${id}-c)`} strokeWidth="11" strokeLinecap="round" />
+      <path d="M 60.9 75.4 A 24 24 0 0 0 74 52.7" stroke={`url(#${id}-a)`} strokeWidth="11" strokeLinecap="round" />
 
-      {/* Points intermédiaires dans les césures */}
-      <circle cx="29.2" cy="42" r="3.6" fill="var(--cyan)" />
-      <circle cx="70.8" cy="42" r="3.6" fill="var(--magenta)" />
-      <circle cx="50" cy="78" r="3.6" fill="var(--amber)" />
+      {/* Tiges épaisses fondues entre nœud et arc */}
+      <path d="M 50 31 L 50 22" stroke={`url(#${id}-m)`} strokeWidth="10" strokeLinecap="round" />
+      <path d="M 28.4 66.5 L 21.4 70.5" stroke={`url(#${id}-c)`} strokeWidth="10" strokeLinecap="round" />
+      <path d="M 71.6 66.5 L 78.6 70.5" stroke={`url(#${id}-a)`} strokeWidth="10" strokeLinecap="round" />
 
-      {/* Tiges nœud → arc */}
-      <path d="M 50 24 L 50 31" stroke={`url(#${id}-m)`} strokeWidth="7" strokeLinecap="round" />
-      <path d="M 22 69 L 28.5 64.5" stroke={`url(#${id}-c)`} strokeWidth="7" strokeLinecap="round" />
-      <path d="M 78 69 L 71.5 64.5" stroke={`url(#${id}-a)`} strokeWidth="7" strokeLinecap="round" />
+      {/* Points dans les césures (couleurs croisées, comme l'original) */}
+      <circle cx="29.2" cy="42" r="3.8" fill="var(--cyan)" />
+      <circle cx="70.8" cy="42" r="3.8" fill="var(--magenta)" />
+      <circle cx="50" cy="78" r="3.8" fill="var(--amber)" />
 
       {/* Nœuds avec anneau intérieur */}
-      <circle cx="50" cy="14" r="12" fill={`url(#${id}-m)`} />
-      <circle cx="50" cy="14" r="6.6" stroke="rgba(0,0,0,.22)" strokeWidth="2.6" />
-      <circle cx="17.5" cy="74" r="12" fill={`url(#${id}-c)`} />
-      <circle cx="17.5" cy="74" r="6.6" stroke="rgba(0,0,0,.22)" strokeWidth="2.6" />
-      <circle cx="82.5" cy="74" r="12" fill={`url(#${id}-a)`} />
-      <circle cx="82.5" cy="74" r="6.6" stroke="rgba(0,0,0,.22)" strokeWidth="2.6" />
+      <circle cx="50" cy="14" r="13" fill={`url(#${id}-m)`} />
+      <circle cx="50" cy="14" r="7" stroke="rgba(0,0,0,.25)" strokeWidth="3" />
+      <circle cx="15.4" cy="74" r="13" fill={`url(#${id}-c)`} />
+      <circle cx="15.4" cy="74" r="7" stroke="rgba(0,0,0,.25)" strokeWidth="3" />
+      <circle cx="84.6" cy="74" r="13" fill={`url(#${id}-a)`} />
+      <circle cx="84.6" cy="74" r="7" stroke="rgba(0,0,0,.25)" strokeWidth="3" />
     </svg>
   );
 }
