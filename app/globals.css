@@ -158,6 +158,22 @@ section[id] {
   background: linear-gradient(90deg, var(--cyan), var(--magenta));
 }
 
+/* Emblème 3D (palier 3) — absolu : zéro CLS, peuplé desktop-only après load */
+.emblem3d {
+  position: absolute;
+  top: 92px;
+  left: 6vw;
+  width: 128px;
+  height: 128px;
+  z-index: 0;
+  pointer-events: none;
+}
+@media (max-width: 1020px), (max-height: 780px) {
+  .emblem3d {
+    display: none;
+  }
+}
+
 /* Index de section éditorial (chiffre géant en outline) */
 .sec-index {
   position: absolute;
