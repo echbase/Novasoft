@@ -27,17 +27,8 @@ export default function ScrollExperience() {
           : (fn) => window.setTimeout(fn, 250);
       idle(async () => {
         if (cancelled) return;
-        const [fx, emblem] = await Promise.all([
-          import('@/lib/scrollFx'),
-          import('@/lib/emblem3d'),
-        ]);
-        if (cancelled) return;
-        const cleanFx = fx.init();
-        const cleanEmblem = emblem.init();
-        cleanup = () => {
-          cleanFx();
-          cleanEmblem();
-        };
+        const fx = await import('@/lib/scrollFx');
+        if (!cancelled) cleanup = fx.init();
       });
     };
 

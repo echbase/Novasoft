@@ -3,7 +3,6 @@ import AIGenPanel from './AIGenPanel';
 export default function Hero() {
   return (
     <header className="hero relative grid min-h-[100svh] items-center gap-[6vw] px-[6vw] pt-[140px] pb-[90px] grid-cols-1 max-[1020px]:gap-[60px] max-[1020px]:pt-[120px] min-[1021px]:grid-cols-[1.1fr_.9fr]">
-      <div id="emblem3d" className="emblem3d" aria-hidden="true" />
       <div>
         <span className="eyebrow reveal mb-[26px]">Studio digital · Île Maurice</span>
         <h1 className="reveal d1 font-display font-bold leading-[1.05] tracking-[-.02em] text-[clamp(36px,5.4vw,72px)]">
