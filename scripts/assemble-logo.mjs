@@ -12,8 +12,8 @@
 import { readdirSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 
-const EXPECTED_MD5 = '01a12fdd24d02c27d5afd5f79ff5ab6b';
-const EXPECTED_SIZE = 20286;
+const EXPECTED_MD5 = '91dd439f4bcd37687a0eabc320c31980';
+const EXPECTED_SIZE = 20371;
 const ASSET_URL = 'https://novasoft-assets-echbases-projects.vercel.app/logo-full.png';
 
 const md5 = (b) => createHash('md5').update(b).digest('hex');
@@ -35,10 +35,10 @@ async function fromUrl() {
 
 /* md5 (8 premiers hex) attendus par fragment — pour localiser toute corruption */
 const FRAGMENT_MD5 = {
-  '00': '4228d8f1', '01': '8f4030d2', '02': '7d5c861b', '03': '5a8cd014',
-  '04': '5bad2459', '05': '2a2735f9', '06': 'b5250685', '07': '9ca08cee',
-  '08': '3404d345', '09': '26070f5e', '10': 'd5ab7fc9', '11': '500a1878',
-  '12': '965f3bf6', '13': '71cfa779', '14': '9484b6ea',
+  '00': '159fb964', '01': '92daa20b', '02': '1dc3de36', '03': '6649b00a',
+  '04': 'e72edaa6', '05': '65aab8e7', '06': '60641564', '07': 'e75f1913',
+  '08': '5ab87f3b', '09': '424d25cb', '10': 'e9dc1ed9', '11': '095d68ac',
+  '12': '354e1798', '13': '731f7c89', '14': '23e37458', '15': '3eeaba4a',
 };
 
 function fromFragments() {
