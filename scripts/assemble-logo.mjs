@@ -15,7 +15,7 @@ const b64 = parts.map((f) => readFileSync(`logo-parts/${f}`, 'utf8').replace(/\s
 const png = Buffer.from(b64, 'base64');
 
 mkdirSync('public', { recursive: true });
-writeFileSync('public/logo-emblem.png', png);
+writeFileSync('public/logo-full.png', png);
 
 const md5 = createHash('md5').update(png).digest('hex');
 console.log(`[assemble-logo] ${parts.length} fragments, ${png.length} octets, md5=${md5}`);

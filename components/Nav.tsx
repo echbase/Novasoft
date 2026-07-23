@@ -51,17 +51,9 @@ export default function Nav() {
   return (
     <>
       <nav className={`nav${scrolled ? ' scrolled' : ''}`} aria-label="Navigation principale">
-        <a className="flex items-center gap-3 text-ink no-underline" href="#top">
-          {/* Emblème officiel (PNG original fourni, fond transparent, 256px pour le retina) */}
-          <img src="/logo-emblem.png" alt="" width={38} height={38} aria-hidden="true" />
-          <span>
-            <b className="block font-display text-[19px] font-bold tracking-[.02em] leading-tight">
-              NovaSoft
-            </b>
-            <span className="block text-muted text-[11px] tracking-[.14em] uppercase leading-tight">
-              Digital Xperience
-            </span>
-          </span>
+        <a className="flex items-center no-underline" href="#top">
+          {/* Logo officiel complet (PNG original, non retouché, réassemblé au build) */}
+          <img src="/logo-full.png" alt="NovaSoft — Digital Xperience" height={48} className="h-12 w-auto" />
         </a>
         <div className="navlinks flex gap-8">
           {LINKS.map((l) => (
