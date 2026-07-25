@@ -1,0 +1,16 @@
+[project]
+name = "social-hub"
+version = "0.1.0"
+description = "Hub de publication sociale multi-marques NovaSoft (pilote : RoG Hunting)"
+requires-python = ">=3.11"
+dependencies = [
+    "sqlalchemy>=2.0",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
