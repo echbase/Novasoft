@@ -19,7 +19,7 @@ export default function MentionsLegales() {
         <li>Numéro d&apos;enregistrement commercial (BRN) : C25226236</li>
         <li>Directeur de la publication : la direction de NovaSoft Ltd</li>
         <li>
-          Contact : <a href="mailto:contact@novasoft.mu">contact@novasoft.mu</a>
+          Contact : <a href="mailto:support@novasoft.mu">support@novasoft.mu</a>
         </li>
       </ul>
 

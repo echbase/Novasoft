@@ -12,8 +12,8 @@ export default function Contact() {
           Racontez-nous votre idée. Nous revenons vers vous sous 48 h avec une première lecture
           stratégique et technique.
         </p>
-        <a className="btn btn--primary" href="mailto:contact@novasoft.mu" data-magnetic>
-          contact@novasoft.mu
+        <a className="btn btn--primary" href="mailto:support@novasoft.mu" data-magnetic>
+          support@novasoft.mu
         </a>
       </div>
     </section>

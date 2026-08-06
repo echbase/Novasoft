@@ -20,7 +20,7 @@ export default function Confidentialite() {
       <h2>Contact par e-mail</h2>
       <p>
         Le seul moyen de contact proposé est un lien e-mail direct vers{' '}
-        <a href="mailto:contact@novasoft.mu">contact@novasoft.mu</a>. Si vous nous écrivez, les informations
+        <a href="mailto:support@novasoft.mu">support@novasoft.mu</a>. Si vous nous écrivez, les informations
         transmises (votre adresse e-mail et le contenu de votre message) sont utilisées uniquement pour vous
         répondre et assurer le suivi de votre demande. Elles ne sont ni revendues, ni transmises à des tiers,
         ni utilisées à des fins de prospection sans votre accord.
@@ -40,7 +40,7 @@ export default function Confidentialite() {
       <h2>Vos droits</h2>
       <p>
         Pour toute question relative à vos données (accès, rectification, suppression d&apos;un échange
-        e-mail), écrivez-nous à <a href="mailto:contact@novasoft.mu">contact@novasoft.mu</a>. Nous répondons
+        e-mail), écrivez-nous à <a href="mailto:support@novasoft.mu">support@novasoft.mu</a>. Nous répondons
         sous 48&nbsp;h ouvrées.
       </p>
 
