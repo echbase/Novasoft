@@ -11,8 +11,8 @@ export default function MentionsLegales() {
     <LegalShell title="Mentions légales" updated="23 juillet 2026">
       <h2>Éditeur du site</h2>
       <p>
-        Le site <strong>novasoft-site.vercel.app</strong> (à terme <strong>novasoft.mu</strong>) est édité par{' '}
-        <strong>NovaSoft Ltd</strong>, société de droit mauricien.
+        Le site <strong>novasoft.mu</strong> est édité par <strong>NovaSoft Ltd</strong>, société de
+        droit mauricien.
       </p>
       <ul>
         <li>Siège social : Pereybere 30546, République de Maurice</li>
