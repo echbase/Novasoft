@@ -1,6 +1,6 @@
 # STATE — Site vitrine NovaSoft
 
-Dernière mise à jour : 2026-07-23
+Dernière mise à jour : 2026-08-19
 
 ## ✅ Fait
 
@@ -34,23 +34,30 @@ Dernière mise à jour : 2026-07-23
   (écho du panneau IA) : chrome + pastille « en ligne », scènes SVG animées sur mesure
   (skyline qui s'élève / radar GPS avec échos / chandeliers + courbe qui se trace),
   tilt 3D au curseur (`ProjectCard`), carte entière cliquable, tokens uniquement.
+- **Pages légales** : `/mentions-legales` (NovaSoft Ltd, siège Pereybere, BRN C25226236,
+  site édité sur novasoft.mu) et `/confidentialite` (cookies), liens footer, entrées sitemap.
+- **Logo néon v2** : version haute qualité fournie par le client (texte blanc lisible),
+  artefact `public/logo-full.png` régénéré par le prebuild md5-vérifié.
+- **Contact** : `support@novasoft.mu` (CTA contact + pages légales).
+- **Déploiement** : projet Vercel connecté au repo GitHub — chaque push redéploie,
+  plus aucun transfert de fichiers manuel.
+- **Social Hub** (sous-projet Python `social-hub/`, Phase 1) : scaffold, modèles,
+  connecteur Emergent en mock, connecteur Meta dry-run verrouillé.
+  Voir `social-hub/STATE.md` pour son état détaillé.
 - **Mesures (build statique servi localement)** :
   - Lighthouse mobile : **Performance 92 · Accessibilité 100** · CLS 0 · TBT 30 ms
   - First Load JS : 90,9 kB
   - Validation visuelle desktop 1440px + mobile 390px (screenshots Playwright)
+  - Build vérifié le 2026-08-19 : `npm ci` + `npm run build` OK, 8 pages statiques,
+    First Load JS 99,2 kB sur `/` (87,5 kB partagés)
 
 ## 🔄 En cours
 
-- Déploiement preview Vercel (projet `novasoft-site`, team `echbases-projects`) via agent
-  à transcription vérifiée — les gros transferts inline corrompaient le base64 ;
-  le prebuild md5-vérifié empêche désormais toute mise en ligne d'un logo corrompu.
+- Rien.
 
 ## ⏭️ Prochain pas
 
-1. **Recommandé fortement** : connecter le projet Vercel au repo GitHub
-   (vercel.com/echbases-projects/novasoft-site/settings/git) — supprime définitivement
-   l'étape fragile de transfert de fichiers.
-2. Audit ui-ux-pro-max complet sur device réel (le score perf local est mesuré
+1. Audit ui-ux-pro-max complet sur device réel (le score perf local est mesuré
    en WebGL logiciel — sur GPU réel, le shader est bien plus léger).
-3. Production + domaine novasoft.mu.
-4. OG image dédiée (1200×630) si souhaité.
+2. Production + domaine novasoft.mu.
+3. OG image dédiée (1200×630) si souhaité.
