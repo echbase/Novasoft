@@ -53,6 +53,15 @@ Dernière mise à jour : 2026-08-30 (2)
   Social Hub volontairement non ajouté (choix client : R&D, pas produit commercial).
 - **robots.txt** : `app/robots.ts` (route statique Next), autorise tout et déclare
   le sitemap — il manquait, la production renvoyait 404.
+- **SEO / GEO** (2026-08-30) : title porteur de mots-clés (58 car., était 28 sans mot-clé),
+  description ramenée à 157 car., canonical, JSON-LD `@graph`
+  (Organization + ProfessionalService + WebPage daté + WebSite) avec les données
+  réelles des mentions légales, image OG 1200×630 générée dans la charte
+  (`scripts/og.html` → `public/og.jpg`) + `summary_large_image`,
+  dimensions intrinsèques du logo. Séparateurs `—` des étapes Méthode et du footer
+  passés au point médian (cohérence avec le reste du site).
+  Mesures Google PageSpeed : mobile 97 / desktop 100, LCP 1,9 s, CLS 0, TBT 0 ms.
+  **Reste à faire côté client : créer la propriété Search Console et soumettre le sitemap.**
 - **Déploiement** : projet Vercel connecté au repo GitHub — chaque push redéploie,
   plus aucun transfert de fichiers manuel.
 - **Social Hub** (sous-projet Python `social-hub/`, Phase 1) : scaffold, modèles,

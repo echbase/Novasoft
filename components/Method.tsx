@@ -2,22 +2,22 @@ import SectionHead from './SectionHead';
 
 const STEPS = [
   {
-    n: '01 — Comprendre',
+    n: '01 · Comprendre',
     title: 'Immersion',
     desc: "Objectifs, processus, outils existants, données. Nous déterminons ce qui doit être automatisé, ce qui peut être intégré, et ce qui nécessite réellement du développement.",
   },
   {
-    n: '02 — Concevoir',
+    n: '02 · Concevoir',
     title: 'Design & architecture',
     desc: "Maquettes, parcours, architecture technique. Chaque décision est validée avant d'être construite.",
   },
   {
-    n: '03 — Construire',
+    n: '03 · Construire',
     title: 'Développement',
     desc: "Sprints courts, livraisons visibles, code sécurisé. Vous suivez l'avancement en continu.",
   },
   {
-    n: '04 — Faire vivre',
+    n: '04 · Faire vivre',
     title: 'Lancement & évolution',
     desc: "Mise en production, mesure, itération. Un produit digital n'est jamais figé.",
   },

@@ -53,7 +53,7 @@ export default function Nav() {
       <nav className={`nav${scrolled ? ' scrolled' : ''}`} aria-label="Navigation principale">
         <a className="flex items-center no-underline" href="#top">
           {/* Logo officiel complet (PNG original, non retouché, réassemblé au build) */}
-          <img src="/logo-full.png" alt="NovaSoft — Digital Xperience" height={48} className="h-12 w-auto" />
+          <img src="/logo-full.png" alt="NovaSoft, Digital Xperience" width={124} height={48} className="h-12 w-auto" />
         </a>
         <div className="navlinks flex gap-8">
           {LINKS.map((l) => (
