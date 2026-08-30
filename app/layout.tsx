@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://novasoft.mu'),
   title: 'NovaSoft — Digital Xperience',
   description:
-    "Studio digital à l'Île Maurice : stratégie, intelligence artificielle, développement web & SaaS, cybersécurité. Des expériences numériques de niveau senior, augmentées par l'IA.",
+    "Studio digital à l'Île Maurice : plateformes web, produits SaaS, agents IA et automatisation métier. Nous connectons l'IA à vos outils, vos données et vos processus — build, integrate, automate.",
   openGraph: {
     title: 'NovaSoft — Digital Xperience',
     description:
-      "Studio digital à l'Île Maurice : stratégie, IA, développement web & SaaS, cybersécurité.",
+      "Plateformes web, produits SaaS, agents IA et automatisation métier — connectés à vos outils et à vos processus.",
     url: 'https://novasoft.mu',
     siteName: 'NovaSoft',
     locale: 'fr_FR',

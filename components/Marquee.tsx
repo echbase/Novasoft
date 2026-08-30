@@ -1,10 +1,12 @@
 const ITEMS = [
-  'Intelligence artificielle',
+  'Agents IA',
+  'LLM & skills métier',
   'Développement web',
   'SaaS',
+  'Automatisation',
+  'Intégration & APIs',
   'Cybersécurité',
   'UX / UI',
-  'Automatisation',
   'Cloud',
 ];
 

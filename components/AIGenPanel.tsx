@@ -12,7 +12,7 @@ type Block = [number, number, number, number, string];
 
 const LAYOUTS: { prompt: string; blocks: Block[] }[] = [
   {
-    prompt: 'Conçois une landing page SaaS moderne…',
+    prompt: 'Déploie un agent de qualification des leads…',
     blocks: [
       [1, 6, 1, 1, 'blk--hl'],
       [1, 3, 2, 1, ''],
@@ -23,7 +23,7 @@ const LAYOUTS: { prompt: string; blocks: Block[] }[] = [
     ],
   },
   {
-    prompt: 'Génère un dashboard analytics temps réel…',
+    prompt: 'Connecte le CRM aux e-mails, automatise le suivi…',
     blocks: [
       [1, 2, 1, 1, 'blk--cy'],
       [3, 2, 1, 1, 'blk--hl'],
@@ -34,7 +34,7 @@ const LAYOUTS: { prompt: string; blocks: Block[] }[] = [
     ],
   },
   {
-    prompt: 'Crée une expérience e-commerce immersive…',
+    prompt: 'Orchestre les modèles sur les données produit…',
     blocks: [
       [1, 3, 1, 2, 'blk--am'],
       [4, 3, 1, 1, ''],

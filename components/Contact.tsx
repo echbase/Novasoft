@@ -10,7 +10,8 @@ export default function Contact() {
         </h2>
         <p className="mx-auto mt-5 mb-9 max-w-[48ch] text-muted">
           Racontez-nous votre idée. Nous revenons vers vous sous 48 h avec une première lecture
-          stratégique et technique.
+          stratégique et technique. Projets menés depuis Maurice, pour des clients locaux et
+          internationaux.
         </p>
         <a className="btn btn--primary" href="mailto:support@novasoft.mu" data-magnetic>
           support@novasoft.mu

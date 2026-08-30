@@ -1,5 +1,6 @@
 import SectionHead from './SectionHead';
 import SpotlightCard from './SpotlightCard';
+import Approach from './Approach';
 import { IconStrategy, IconAI, IconCode, IconShield } from '@/lib/icons';
 
 const EXPERTISES = [
@@ -16,15 +17,15 @@ const EXPERTISES = [
     ico: 'ico--2',
     delay: 'd2',
     title: 'Intelligence artificielle',
-    desc: "Agents IA, orchestration multi-modèles, automatisation intelligente. L'IA intégrée à vos processus, pas plaquée dessus.",
-    tag: 'Agents · LLM · Automatisation',
+    desc: "Agents IA, LLM, skills métier, orchestration multi-modèles et automatisation intelligente. Nous connectons l'IA à vos outils, vos données et vos processus — sans ajouter inutilement de nouveaux logiciels.",
+    tag: 'Agents · LLM · Skills · Automatisation',
   },
   {
     icon: <IconCode />,
     ico: 'ico--3',
     delay: 'd3',
     title: 'Développement & code',
-    desc: "Applications web, plateformes SaaS, APIs. Un code propre, documenté, pensé pour évoluer — livré avec la discipline d'un studio senior.",
+    desc: "Applications web, plateformes SaaS, APIs. Nous développons quand le besoin métier le justifie ; quand les outils existants peuvent être connectés et automatisés, nous privilégions l'intégration.",
     tag: 'Web · SaaS · API',
   },
   {
@@ -57,6 +58,7 @@ export default function ExpertiseGrid() {
           </SpotlightCard>
         ))}
       </div>
+      <Approach />
     </section>
   );
 }

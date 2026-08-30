@@ -4,7 +4,7 @@ const STEPS = [
   {
     n: '01 — Comprendre',
     title: 'Immersion',
-    desc: "Vos objectifs, votre marché, vos contraintes. On ne code rien avant d'avoir tout compris.",
+    desc: "Objectifs, processus, outils existants, données. Nous déterminons ce qui doit être automatisé, ce qui peut être intégré, et ce qui nécessite réellement du développement.",
   },
   {
     n: '02 — Concevoir',

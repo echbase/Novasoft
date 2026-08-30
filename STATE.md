@@ -1,6 +1,6 @@
 # STATE — Site vitrine NovaSoft
 
-Dernière mise à jour : 2026-08-30
+Dernière mise à jour : 2026-08-30 (2)
 
 ## ✅ Fait
 
@@ -41,6 +41,16 @@ Dernière mise à jour : 2026-08-30
 - **Logo néon v2** : version haute qualité fournie par le client (texte blanc lisible),
   artefact `public/logo-full.png` régénéré par le prebuild md5-vérifié.
 - **Contact** : `support@novasoft.mu` (CTA contact + pages légales).
+- **Positionnement — agents IA / intégration** (2026-08-30) : reformulation du wording
+  sans toucher au design ni à l'architecture one-page. Hero, carte IA
+  (tag `Agents · LLM · Skills · Automatisation`), carte Développement (build vs intégration),
+  étape 01 de la Méthode, sub des Réalisations + ligne `stack` par projet,
+  prompts du panneau IA (ils vendaient « l'IA qui fabrique des sites »),
+  périmètre Maurice + international, marquee et metadata.
+  Nouveau composant `Approach.tsx` rendu dans la section Expertises (donc pas de
+  section ni d'entrée de nav supplémentaire) : bloc « L'IA sans complexité inutile »
+  + les 3 modes Build · Integrate · Automate, puis une bande de 5 cas d'usage.
+  Social Hub volontairement non ajouté (choix client : R&D, pas produit commercial).
 - **Déploiement** : projet Vercel connecté au repo GitHub — chaque push redéploie,
   plus aucun transfert de fichiers manuel.
 - **Social Hub** (sous-projet Python `social-hub/`, Phase 1) : scaffold, modèles,

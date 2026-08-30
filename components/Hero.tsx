@@ -9,9 +9,10 @@ export default function Hero() {
           L&apos;expertise digitale, <span className="grad">augmentée par l&apos;IA</span>.
         </h1>
         <p className="reveal d2 mt-[26px] max-w-[50ch] text-muted text-[clamp(15.5px,1.5vw,18px)]">
-          NovaSoft conçoit des plateformes web, des produits SaaS et des expériences numériques de
-          niveau senior — du design à la mise en production, avec l&apos;intelligence artificielle
-          au cœur de chaque décision.
+          NovaSoft conçoit des plateformes web, des produits digitaux et des systèmes
+          d&apos;automatisation intelligents. Nous intégrons agents IA, LLM et workflows
+          directement aux outils et aux processus de l&apos;entreprise — du design à la mise
+          en production.
         </p>
         <div className="reveal d3 mt-10 flex flex-wrap gap-4">
           <a className="btn btn--primary" href="#contact" data-magnetic>

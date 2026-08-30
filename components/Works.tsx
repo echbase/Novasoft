@@ -15,6 +15,7 @@ type Project = {
   tag: string;
   title: string;
   desc: string;
+  stack: string;
   variant: string;
   delay: string;
   scene: React.ReactNode;
@@ -138,6 +139,7 @@ const PROJECTS: Project[] = [
     tag: 'Immobilier · Plateforme',
     title: 'NovaImmo',
     desc: "Plateforme de développement immobilier à l'Île Maurice : elle transforme les terrains en projets d'exception, de l'étude de valeur à la commercialisation.",
+    stack: 'Platform · Real estate · Automation',
     variant: 'proj--immo',
     delay: 'd1',
     scene: <SceneImmo />,
@@ -147,7 +149,8 @@ const PROJECTS: Project[] = [
     domain: 'roghunting.com',
     tag: 'E-commerce · Marque',
     title: 'RoG Hunting',
-    desc: "Boutique e-commerce spécialiste du GPS de repérage pour chiens de chasse : catalogue technique, paiement sécurisé et livraison France & UE.",
+    desc: "Plateforme e-commerce spécialiste du GPS de repérage pour chiens de chasse : catalogue technique, paiement sécurisé, logistique France & UE.",
+    stack: 'E-commerce · Automation · Data',
     variant: 'proj--hunt',
     delay: 'd2',
     scene: <SceneHunt />,
@@ -158,6 +161,7 @@ const PROJECTS: Project[] = [
     tag: 'Marketplace · Outdoor',
     title: 'NaturaSell',
     desc: "Marketplace outdoor multi-vendeurs — chasse, pêche, randonnée, camping, vanlife : boutiques pro, enchères flash et location de matériel entre passionnés.",
+    stack: 'Marketplace · Multi-vendor · Workflows',
     variant: 'proj--market',
     delay: 'd3',
     scene: <SceneMarket />,
@@ -170,7 +174,7 @@ export default function Works() {
       <SectionHead
         eyebrow="Réalisations"
         index="03"
-        sub="Trois produits en ligne, conçus et développés de bout en bout par le studio."
+        sub="Trois plateformes en ligne — e-commerce, marketplace multi-vendeurs, système métier — conçues et développées de bout en bout par le studio."
       >
         Des produits <span className="grad">qui existent vraiment</span>.
       </SectionHead>
@@ -198,6 +202,7 @@ export default function Works() {
               <span className="k">{p.tag}</span>
               <span className="proj-title">{p.title}</span>
               <span className="proj-desc">{p.desc}</span>
+              <span className="proj-stack">{p.stack}</span>
               <span className="proj-cta">
                 Visiter le site <IconArrow />
               </span>
