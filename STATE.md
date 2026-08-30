@@ -51,6 +51,8 @@ Dernière mise à jour : 2026-08-30 (2)
   section ni d'entrée de nav supplémentaire) : bloc « L'IA sans complexité inutile »
   + les 3 modes Build · Integrate · Automate, puis une bande de 5 cas d'usage.
   Social Hub volontairement non ajouté (choix client : R&D, pas produit commercial).
+- **robots.txt** : `app/robots.ts` (route statique Next), autorise tout et déclare
+  le sitemap — il manquait, la production renvoyait 404.
 - **Déploiement** : projet Vercel connecté au repo GitHub — chaque push redéploie,
   plus aucun transfert de fichiers manuel.
 - **Social Hub** (sous-projet Python `social-hub/`, Phase 1) : scaffold, modèles,
