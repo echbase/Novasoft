@@ -736,7 +736,7 @@ section[id] {
 }
 .proj--immo .proj-view { background: radial-gradient(120% 130% at 80% -10%, rgb(var(--cyan-rgb) / 0.16), transparent 60%); }
 .proj--hunt .proj-view { background: radial-gradient(120% 130% at 50% -10%, rgb(var(--amber-rgb) / 0.14), transparent 60%); }
-.proj--trade .proj-view { background: radial-gradient(120% 130% at 20% -10%, rgb(var(--magenta-rgb) / 0.15), transparent 60%); }
+.proj--market .proj-view { background: radial-gradient(120% 130% at 20% -10%, rgb(var(--magenta-rgb) / 0.15), transparent 60%); }
 .scene {
   position: absolute;
   inset: 0;
@@ -830,25 +830,44 @@ section[id] {
   55% { opacity: 0.15; }
   100% { opacity: 1; }
 }
-.sc-curve {
-  stroke-dasharray: 340;
-  stroke-dashoffset: 340;
-  animation: draw 2.8s ease-out forwards;
+.sc-topo {
+  stroke-dasharray: 330;
+  stroke-dashoffset: 330;
+  animation: draw 2.6s ease-out forwards;
   animation-delay: 0.4s;
 }
-.js .reveal.in .sc-curve {
-  animation-play-state: running;
+.sc-topo--2 {
+  animation-delay: 0.75s;
 }
 @keyframes draw {
   to {
     stroke-dashoffset: 0;
   }
 }
-.sc-tip {
-  animation: pulse 1.6s ease-in-out infinite;
+.sc-tile {
+  transform: translateY(2px);
+  opacity: 0.92;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s;
 }
-.sc-candles g {
-  transition: opacity 0.3s;
+.proj:hover .sc-tile {
+  transform: translateY(0);
+  opacity: 1;
+}
+.proj:hover .sc-tile--2 {
+  transition-delay: 0.06s;
+}
+.proj:hover .sc-tile--3 {
+  transition-delay: 0.12s;
+}
+.sc-flash {
+  transform-origin: 200px 18px;
+  animation: flash-pulse 1.8s ease-in-out infinite;
+}
+@keyframes flash-pulse {
+  50% {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
 }
 
 /* ════════════ Contact ════════════ */
@@ -964,5 +983,8 @@ section[id] {
   .blk {
     opacity: 1;
     transform: none;
+  }
+  .sc-topo {
+    stroke-dashoffset: 0;
   }
 }

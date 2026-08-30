@@ -1,6 +1,6 @@
 # STATE — Site vitrine NovaSoft
 
-Dernière mise à jour : 2026-08-19
+Dernière mise à jour : 2026-08-30
 
 ## ✅ Fait
 
@@ -29,10 +29,12 @@ Dernière mise à jour : 2026-08-19
   et échec dur du build si l'octet-à-octet n'est pas exact (20286 octets,
   md5 `01a12fdd24d02c27d5afd5f79ff5ab6b`). Original 2400×2400 archivé dans `assets-brand/`.
   Miroir de production auto-vérifié : projet Vercel `novasoft-assets`.
-- **Réalisations — 3 vrais projets** (2026-07-23) : NovaImmo (novaimmo.mu),
-  RoG Hunting (roghunting.com), TradyGo (tradygo.io). Présentation « fenêtres navigateur »
+- **Réalisations — 3 vrais projets** : NovaImmo (novaimmo.mu),
+  RoG Hunting (roghunting.com), NaturaSell (naturasell.fr — a remplacé TradyGo
+  le 2026-08-30, tradygo.io n'étant plus en ligne). Présentation « fenêtres navigateur »
   (écho du panneau IA) : chrome + pastille « en ligne », scènes SVG animées sur mesure
-  (skyline qui s'élève / radar GPS avec échos / chandeliers + courbe qui se trace),
+  (skyline qui s'élève / radar GPS avec échos / vitrine d'annonces outdoor sur
+  courbes de niveau avec pastille « enchère flash »),
   tilt 3D au curseur (`ProjectCard`), carte entière cliquable, tokens uniquement.
 - **Pages légales** : `/mentions-legales` (NovaSoft Ltd, siège Pereybere, BRN C25226236,
   site édité sur novasoft.mu) et `/confidentialite` (cookies), liens footer, entrées sitemap.

@@ -5,7 +5,7 @@ import { IconArrow } from '@/lib/icons';
 /*
  * Réalisations — 3 projets livrés, présentés en "fenêtres navigateur"
  * (écho du panneau IA du hero). Chaque projet a sa scène SVG dessinée
- * sur mesure : skyline immobilière, radar GPS, courbe de trading.
+ * sur mesure : skyline immobilière, radar GPS, vitrine d'annonces outdoor.
  * Aucune valeur brute : tout passe par les tokens var(--…).
  */
 
@@ -65,43 +65,68 @@ function SceneHunt() {
   );
 }
 
-/* Scène 3 — TradyGo : chandeliers + courbe qui se trace, dominante magenta/violet */
-function SceneTrade() {
+/* Scène 3 — NaturaSell : vitrine d'annonces outdoor sur courbes de niveau,
+   pastille « enchère flash », dominante magenta/violet */
+function SceneMarket() {
   return (
     <svg className="scene" viewBox="0 0 320 150" fill="none" aria-hidden="true">
-      <g stroke="var(--line)" strokeWidth="1.2">
-        <path d="M24 118h272M24 84h272M24 50h272" />
-      </g>
-      <g className="sc-candles">
-        <g stroke="var(--cyan)" strokeWidth="1.4">
-          <line x1="56" y1="70" x2="56" y2="122" />
-          <rect x="49" y="82" width="14" height="28" rx="2" fill="var(--cyan)" opacity=".35" />
-        </g>
-        <g stroke="var(--magenta)" strokeWidth="1.4">
-          <line x1="96" y1="58" x2="96" y2="112" />
-          <rect x="89" y="66" width="14" height="30" rx="2" fill="var(--magenta)" opacity=".35" />
-        </g>
-        <g stroke="var(--cyan)" strokeWidth="1.4">
-          <line x1="136" y1="44" x2="136" y2="98" />
-          <rect x="129" y="54" width="14" height="30" rx="2" fill="var(--cyan)" opacity=".35" />
-        </g>
-        <g stroke="var(--violet)" strokeWidth="1.4">
-          <line x1="176" y1="52" x2="176" y2="104" />
-          <rect x="169" y="60" width="14" height="32" rx="2" fill="var(--violet)" opacity=".4" />
-        </g>
-        <g stroke="var(--cyan)" strokeWidth="1.4">
-          <line x1="216" y1="30" x2="216" y2="86" />
-          <rect x="209" y="40" width="14" height="32" rx="2" fill="var(--cyan)" opacity=".35" />
-        </g>
-      </g>
+      {/* Courbes de niveau — le terrain outdoor sous la place de marché */}
       <path
-        className="sc-curve"
-        d="M28 120C64 112 84 96 112 88s52-6 78-26 42-30 74-40"
-        stroke="var(--magenta)"
-        strokeWidth="2"
-        strokeLinecap="round"
+        className="sc-topo"
+        d="M4 116c34-11 58 6 90 2s52-19 84-15 58 17 88 9"
+        stroke="var(--line)"
+        strokeWidth="1.4"
       />
-      <circle className="sc-tip" cx="264" cy="42" r="4.5" fill="var(--magenta)" />
+      <path
+        className="sc-topo sc-topo--2"
+        d="M4 132c30-9 56 9 88 5s54-17 86-13 56 15 86 7"
+        stroke="var(--muted)"
+        strokeWidth="1.2"
+        opacity=".3"
+      />
+
+      {/* Annonce 1 — randonnée */}
+      <g className="sc-tile">
+        <rect x="22" y="16" width="84" height="80" rx="5" stroke="var(--line)" strokeWidth="1.4" />
+        <rect x="31" y="25" width="66" height="32" rx="3" stroke="var(--cyan)" strokeWidth="1.2" opacity=".5" />
+        <path d="M38 51l14-17 10 13 8-9 14 13" stroke="var(--cyan)" strokeWidth="1.5" strokeLinejoin="round" />
+        <g stroke="var(--muted)" strokeWidth="1.2" opacity=".5">
+          <path d="M31 68h52M31 78h34" />
+        </g>
+        <path d="M31 88h22" stroke="var(--cyan)" strokeWidth="2.4" strokeLinecap="round" />
+      </g>
+
+      {/* Annonce 2 — camping, mise en avant + enchère flash */}
+      <g className="sc-tile sc-tile--2">
+        <rect x="118" y="16" width="84" height="80" rx="5" stroke="var(--violet)" strokeWidth="1.5" />
+        <rect x="127" y="25" width="66" height="32" rx="3" stroke="var(--violet)" strokeWidth="1.2" opacity=".5" />
+        <path d="M138 51l22-20 22 20" stroke="var(--violet)" strokeWidth="1.5" strokeLinejoin="round" />
+        <path d="M132 51h56" stroke="var(--violet)" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M160 34l-6 17h12z" stroke="var(--violet)" strokeWidth="1.3" strokeLinejoin="round" />
+        <g stroke="var(--muted)" strokeWidth="1.2" opacity=".5">
+          <path d="M127 68h52M127 78h40" />
+        </g>
+        <path d="M127 88h26" stroke="var(--magenta)" strokeWidth="2.4" strokeLinecap="round" />
+      </g>
+
+      {/* Annonce 3 — pêche */}
+      <g className="sc-tile sc-tile--3">
+        <rect x="214" y="16" width="84" height="80" rx="5" stroke="var(--line)" strokeWidth="1.4" />
+        <rect x="223" y="25" width="66" height="32" rx="3" stroke="var(--magenta)" strokeWidth="1.2" opacity=".5" />
+        <path d="M230 41c6-8 22-8 28 0-6 8-22 8-28 0z" stroke="var(--magenta)" strokeWidth="1.5" />
+        <path d="M258 41l10-7v14z" stroke="var(--magenta)" strokeWidth="1.5" strokeLinejoin="round" />
+        <circle cx="238" cy="38" r="1.6" fill="var(--magenta)" />
+        <g stroke="var(--muted)" strokeWidth="1.2" opacity=".5">
+          <path d="M223 68h52M223 78h30" />
+        </g>
+        <path d="M223 88h20" stroke="var(--magenta)" strokeWidth="2.4" strokeLinecap="round" />
+      </g>
+
+      {/* Pastille « enchère flash » sur l'annonce mise en avant */}
+      <g className="sc-flash">
+        <circle cx="200" cy="18" r="9" fill="var(--bg)" stroke="var(--magenta)" strokeWidth="1.4" />
+        <path d="M201.5 13l-5 6.2h3.2l-1 4.8 5-6.4h-3.2z" fill="var(--magenta)" />
+      </g>
     </svg>
   );
 }
@@ -128,14 +153,14 @@ const PROJECTS: Project[] = [
     scene: <SceneHunt />,
   },
   {
-    url: 'https://tradygo.io/',
-    domain: 'tradygo.io',
-    tag: 'Fintech · Trading',
-    title: 'TradyGo',
-    desc: "Signaux de trading filtrés et robot MT5 autonome : agrégation multi-analystes, scoring continu des stratégies et exécution automatisée 24/7.",
-    variant: 'proj--trade',
+    url: 'https://naturasell.fr/',
+    domain: 'naturasell.fr',
+    tag: 'Marketplace · Outdoor',
+    title: 'NaturaSell',
+    desc: "Marketplace outdoor multi-vendeurs — chasse, pêche, randonnée, camping, vanlife : boutiques pro, enchères flash et location de matériel entre passionnés.",
+    variant: 'proj--market',
     delay: 'd3',
-    scene: <SceneTrade />,
+    scene: <SceneMarket />,
   },
 ];
 
