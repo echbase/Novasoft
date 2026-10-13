@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { OFFER } from '@/lib/site-offers';
+import { emailLink } from '@/lib/visual-assets';
 import styles from './Nav.module.css';
 
 const LINKS = [
@@ -62,7 +63,7 @@ export default function Nav({ commerce: _commerce = false }: { commerce?: boolea
             </a>
           ))}
         </div>
-        <a className={`cta-mini ${styles.cta}`} href="/#contact">Parler de mon projet</a>
+        <a className={`cta-mini ${styles.cta}`} href={emailLink("Je souhaite parler de mon projet NovaSoft")}>Parler de mon projet</a>
         <button
           ref={toggle}
           className={`burger ${styles.toggle}`}
@@ -81,7 +82,7 @@ export default function Nav({ commerce: _commerce = false }: { commerce?: boolea
               {link.label}
             </a>
           ))}
-          <a className="btn btn--primary mt-5 justify-center" href="/#contact" onClick={() => setOpen(false)}>
+          <a className="btn btn--primary mt-5 justify-center" href={emailLink("Je souhaite parler de mon projet NovaSoft")} onClick={() => setOpen(false)}>
             Parler de mon projet
           </a>
         </div>

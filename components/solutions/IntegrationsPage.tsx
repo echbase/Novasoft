@@ -1,4 +1,5 @@
 import Icon from '@/components/commerce/Icon';
+import { VISUALS, emailLink } from '@/lib/visual-assets';
 import styles from './Solutions.module.css';
 
 const CASES = [
@@ -17,19 +18,12 @@ export default function IntegrationsPage() {
         <span className={styles.eyebrow}>INTÉGRATIONS & API</span>
         <h1>Vos outils peuvent <span className={styles.accent}>travailler ensemble.</span></h1>
         <p>Prix, stock, produits, e-mails, documents ou données : quand une source fiable existe, nous cherchons à éviter la ressaisie et les doubles mises à jour.</p>
-        <div className={styles.actions}><a className={styles.primary} href="/#contact">Étudier mon besoin <Icon name="arrow" size={18}/></a><a className={styles.secondary} href="#exemple">Voir l’exemple revendeur</a></div>
+        <div className={styles.actions}><a className={styles.primary} href={emailLink("Demande de connexion API / intégration")}>Étudier mon besoin <Icon name="arrow" size={18}/></a><a className={styles.secondary} href="#exemple">Voir l’exemple revendeur</a></div>
       </div>
-      <div className={styles.visual}>
-        <div className={styles.halo}/>
-        <div className={styles.apiVisual} aria-label="Schéma d'une API connectant plusieurs outils">
-          <div className={styles.core}><b>API</b><small>CONNEXION</small></div>
-          <div className={`${styles.node} ${styles.nodeA}`}><b>Catalogue</b><span>Produits · références · visuels</span></div>
-          <div className={`${styles.node} ${styles.nodeB}`}><b>Boutique</b><span>Pages · panier · commandes</span></div>
-          <div className={`${styles.node} ${styles.nodeC}`}><b>Disponibilités</b><span>Stock · statut · mise à jour</span></div>
-          <div className={`${styles.node} ${styles.nodeD}`}><b>Outils métier</b><span>E-mails · fichiers · données</span></div>
-          <div className={styles.apiTags}><span>IMPORT</span><span>SYNC</span><span>WEBHOOK</span><span>AUTOMATISATION</span></div>
-        </div>
-      </div>
+      <figure className={styles.mediaPoster}>
+        <img className={styles.mediaImage} src={VISUALS.reseller} alt="Exemple de synchronisation de produits et disponibilités depuis le catalogue revendeur RoG Hunting" width={1179} height={1529}/>
+        <figcaption>Exemple d'intégration RoG Hunting, sous réserve de faisabilité</figcaption>
+      </figure>
     </header>
 
     <section className={styles.section}>
