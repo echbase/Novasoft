@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import CommercePage from '@/components/commerce/CommercePage';
-import { contactConfigured } from '@/lib/contact-config';
 import { OFFER, euros } from '@/lib/site-offers';
 export const metadata: Metadata = {
   title: 'Création e-commerce & maintenance — NovaSoft · Île Maurice',
@@ -13,6 +12,5 @@ export const metadata: Metadata = {
   robots: process.env.VERCEL_ENV === 'production' ? { index: true, follow: true } : { index: false, follow: false },
 };
 export default function SitesInternetMaintenance() {
-  const enabled = contactConfigured();
-  return <><Nav commerce /><main id="contenu"><CommercePage formEnabled={enabled} siteKey={enabled ? process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY : undefined} preview={process.env.VERCEL_ENV !== 'production'} /></main><Footer /></>;
+  return <><Nav commerce /><main id="contenu"><CommercePage preview={process.env.VERCEL_ENV !== 'production'} /></main><Footer /></>;
 }
