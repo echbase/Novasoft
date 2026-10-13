@@ -227,7 +227,8 @@
   .actions { gap: 16px; margin-top: 24px; }
   .heroPrice { margin-top: 28px; }
   .heroVisual { max-width: 520px; width: 100%; margin: 12px auto 0; }
-  .showcase { aspect-ratio: 1.22; }
+  .showcase { aspect-ratio: 1.22; overflow: hidden; }
+  .orbit { inset: 6% 0; }
   .browser { width: 91%; transform: perspective(1200px) rotateY(-6deg) rotate(-2deg); }
   .storeHero { min-height: 140px; }
   .storeHero strong { font-size: 21px; }
