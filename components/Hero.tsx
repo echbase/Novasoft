@@ -1,4 +1,4 @@
-import AIGenPanel from './AIGenPanel';
+import HomeCommandCenter from './home/HomeCommandCenter';
 import { OFFER } from '@/lib/site-offers';
 
 const PROOFS = ['Sites & e-commerce', 'Agents IA utiles', 'Automatisations métier', 'Maintenance & évolution'];
@@ -28,7 +28,7 @@ export default function Hero() {
           ))}
         </ul>
       </div>
-      <div className="reveal d2"><AIGenPanel /></div>
+      <div className="reveal d2"><HomeCommandCenter /></div>
     </header>
   );
 }
