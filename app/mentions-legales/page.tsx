@@ -4,6 +4,7 @@ import LegalShell from '@/components/LegalShell';
 export const metadata: Metadata = {
   title: 'Mentions légales — NovaSoft',
   description: 'Mentions légales du site NovaSoft — Digital Xperience.',
+  alternates: { canonical: '/mentions-legales/' },
 };
 
 export default function MentionsLegales() {

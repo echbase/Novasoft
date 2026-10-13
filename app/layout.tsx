@@ -43,11 +43,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NovaSoft — Agents IA & automatisation métier',
+    title: 'NovaSoft — Sites, IA & automatisation',
     description:
-      "Agents IA, automatisation métier, plateformes web & SaaS. Nous connectons l'IA à vos outils, vos données et vos processus.",
+      "Sites et e-commerce, agents IA, automatisation et intégrations API. NovaSoft conçoit des solutions digitales utiles, modernes et maintenables.",
     images: ['/og.jpg'],
   },
+  robots: process.env.VERCEL_ENV === 'production'
+    ? { index: true, follow: true }
+    : { index: false, follow: false },
 };
 
 /*

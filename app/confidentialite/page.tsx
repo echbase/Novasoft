@@ -5,6 +5,7 @@ import { contactConfigured } from '@/lib/contact-config';
 export const metadata: Metadata = {
   title: 'Politique de confidentialité — NovaSoft',
   description: 'Politique de confidentialité et données du site NovaSoft — Digital Xperience.',
+  alternates: { canonical: '/confidentialite/' },
 };
 
 export default function Confidentialite() {
