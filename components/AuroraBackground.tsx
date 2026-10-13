@@ -63,6 +63,13 @@ export default function AuroraBackground() {
     const cv = canvasRef.current;
     if (!cv) return;
 
+    // Sur mobile, privilégier le fond CSS léger : les visuels marketing sont déjà riches.
+    // Le shader WebGL original reste actif sur ordinateur.
+    if (window.matchMedia('(max-width: 900px)').matches) {
+      setFailed(true);
+      return;
+    }
+
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let raf = 0;
 

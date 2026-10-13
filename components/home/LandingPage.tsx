@@ -36,7 +36,10 @@ export default function LandingPage(){
       </div>
       <div className={styles.heroVisual}>
         <div className={styles.heroFrame}>
-          <img src={VISUALS.agents} alt="Illustration conceptuelle du Dashboard NovaSoft avec son équipe d’agents IA et les outils connectés" width={1122} height={1402} fetchPriority="high"/>
+          <picture>
+            <source media="(max-width: 600px)" srcSet={VISUALS.agentsMobile}/>
+            <img src={VISUALS.agents} alt="Illustration conceptuelle du Dashboard NovaSoft avec son équipe d’agents IA et les outils connectés" width={740} height={760} fetchPriority="high"/>
+          </picture>
           <span className={styles.heroNote}>EXEMPLE VISUEL · ÉCOSYSTÈME NOVASOFT</span>
         </div>
         <span className={`${styles.float} ${styles.floatOne}`}><Icon name="spark" size={16}/> Assistants IA spécialisés</span>
