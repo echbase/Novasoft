@@ -1,20 +1,31 @@
-import styles from './Commerce.module.css';
-/** Maquette HTML anonyme, pas une capture client ni une boutique livrée. */
+import { VISUALS } from '@/lib/visual-assets';
+import styles from './ShopPreview.module.css';
+
+/** Maquette illustrative fictive, assemblée en HTML/CSS, non issue d'un site client. */
 export default function ShopPreview({ compact = false }: { compact?: boolean }) {
-  return <div className={`${styles.showcase} ${compact ? styles.compact : ''}`} aria-label="Exemple illustratif de boutique sur ordinateur et mobile">
-    <div className={styles.orbit} aria-hidden="true" />
-    <div className={styles.browser}>
-      <div className={styles.browserBar}><span aria-hidden="true">● ● ●</span><span>Aperçu de votre boutique</span><span aria-hidden="true">↗</span></div>
-      <div className={styles.store}>
-        <div className={styles.storeNav}><b>VOTRE MARQUE<span> /</span></b><span>Collection &nbsp; À propos &nbsp; Contact</span><span aria-hidden="true">⌕ &nbsp; ♧</span></div>
-        <div className={styles.storeHero}>
-          <div><span className={styles.mockEyebrow}>VOTRE COLLECTION</span><strong>Vos produits.<br />Au premier plan.</strong><p>Une présentation claire.<br />Un parcours plus simple.</p><span className={styles.mockButton}>Découvrir la collection &nbsp; ↗</span></div>
-          <div className={styles.objects} aria-hidden="true"><i className={styles.objectOne} /><i className={styles.objectTwo} /><i className={styles.objectThree} /></div>
+  return (
+    <div className={`${styles.scene} ${compact ? styles.compact : ''}`} aria-label="Maquette de boutique moderne sur ordinateur et mobile">
+      <div className={styles.desktop}>
+        <div className={styles.topbar}><i /><i /><i /><span>Aperçu boutique — proposition graphique</span></div>
+        <div className={styles.store}>
+          <div className={styles.storeNav}><strong>ATELIER<span> NATURE</span></strong><span>Collections&nbsp;&nbsp; À propos&nbsp;&nbsp; Contact</span><span aria-hidden="true">⌕</span></div>
+          <div className={styles.cover} style={{ backgroundImage: `linear-gradient(90deg,rgba(6,20,31,.75),rgba(6,20,31,.03)),url("${VISUALS.shopCover}")` }}>
+            <div><small>NOUVELLE COLLECTION</small><strong>Explorez plus loin.</strong><span>Équipement pensé pour vos aventures.</span><b>Découvrir <span aria-hidden="true">→</span></b></div>
+          </div>
+          <div className={styles.products}>
+            {['Votre sélection','Vos nouveautés','À découvrir'].map((text,i)=><div key={text}><i className={styles['shape'+i]} /><span>{text}</span><b>Explorer →</b></div>)}
+          </div>
         </div>
-        <div className={styles.storeProducts}>{['Votre sélection', 'Vos nouveautés', 'Vos essentiels'].map((label, i) => <div key={label}><div className={`${styles.productShape} ${styles['shape' + i]}`} aria-hidden="true"><i /></div><b>{label}</b><span>Découvrir →</span></div>)}</div>
       </div>
+      <div className={styles.mobile} aria-hidden="true">
+        <div className={styles.notch} />
+        <div className={styles.mobNav}>ATELIER NATURE <span>☰</span></div>
+        <div className={styles.mobCover} style={{backgroundImage:`linear-gradient(180deg,rgba(5,18,32,.12),rgba(5,18,32,.78)),url("${VISUALS.shopCover}")`}}>
+          <small>NOUVELLE COLLECTION</small><b>Explorez plus loin.</b><span>Découvrir →</span>
+        </div>
+        <div className={styles.mobTiles}><span /><span /></div>
+      </div>
+      <span className={styles.demo}>EXEMPLE DE DESIGN · MAQUETTE NON CONTRACTUELLE</span>
     </div>
-    <div className={styles.phone} aria-hidden="true"><div className={styles.phoneTop} /><b>VOTRE MARQUE /</b><div className={styles.phoneHero}><small>VOTRE COLLECTION</small><strong>Vos produits.<br />Au premier plan.</strong><div className={styles.phoneObject} /><span>Découvrir →</span></div><div className={styles.phoneGrid}><i /><i /></div><div className={styles.phoneBottom} /></div>
-    <div className={styles.designTag}><span /> Ordinateur & mobile</div>
-  </div>;
+  );
 }
