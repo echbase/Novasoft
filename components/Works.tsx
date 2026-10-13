@@ -138,8 +138,8 @@ const PROJECTS: Project[] = [
     domain: 'novaimmo.mu',
     tag: 'Immobilier · Plateforme',
     title: 'NovaImmo',
-    desc: "Plateforme de développement immobilier à l'Île Maurice : elle transforme les terrains en projets d'exception, de l'étude de valeur à la commercialisation.",
-    stack: 'Platform · Real estate · Automation',
+    desc: "Plateforme immobilière à l'Île Maurice : présentation des projets, accompagnement et parcours pensé pour transformer une recherche en prise de contact.",
+    stack: 'Immobilier · Parcours client · Automatisation',
     variant: 'proj--immo',
     delay: 'd1',
     scene: <SceneImmo />,
@@ -149,8 +149,8 @@ const PROJECTS: Project[] = [
     domain: 'roghunting.com',
     tag: 'E-commerce · Marque',
     title: 'RoG Hunting',
-    desc: "Plateforme e-commerce spécialiste du GPS de repérage pour chiens de chasse : catalogue technique, paiement sécurisé, logistique France & UE.",
-    stack: 'E-commerce · Automation · Data',
+    desc: "Boutique e-commerce spécialisée : catalogue technique, parcours d'achat, paiement en ligne et expérience pensée pour une clientèle passionnée.",
+    stack: 'E-commerce · Catalogue · Automatisation',
     variant: 'proj--hunt',
     delay: 'd2',
     scene: <SceneHunt />,
@@ -160,8 +160,8 @@ const PROJECTS: Project[] = [
     domain: 'naturasell.fr',
     tag: 'Marketplace · Outdoor',
     title: 'NaturaSell',
-    desc: "Marketplace outdoor multi-vendeurs — chasse, pêche, randonnée, camping, vanlife : boutiques pro, enchères flash et location de matériel entre passionnés.",
-    stack: 'Marketplace · Multi-vendor · Workflows',
+    desc: "Marketplace outdoor multi-vendeurs réunissant boutiques, annonces et services autour de plusieurs univers de passionnés.",
+    stack: 'Marketplace · Multi-vendeurs · Workflows',
     variant: 'proj--market',
     delay: 'd3',
     scene: <SceneMarket />,
@@ -174,9 +174,9 @@ export default function Works() {
       <SectionHead
         eyebrow="Réalisations"
         index="03"
-        sub="Trois plateformes en ligne — e-commerce, marketplace multi-vendeurs, système métier — conçues et développées de bout en bout par le studio."
+        sub="Trois projets en ligne qui montrent notre capacité à transformer un besoin métier en produit digital utilisable."
       >
-        Des produits <span className="grad">qui existent vraiment</span>.
+        Des projets concrets, <span className="grad">déjà en ligne</span>.
       </SectionHead>
       <div className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(300px,1fr))]" style={{ perspective: '1200px' }}>
         {PROJECTS.map((p) => (

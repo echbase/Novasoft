@@ -11,7 +11,7 @@ const SECTION_LINKS = [
 export default function Nav({ commerce = false }: { commerce?: boolean }) {
   const [scrolled, setScrolled] = useState(false), [open, setOpen] = useState(false), [active, setActive] = useState('');
   const toggle = useRef<HTMLButtonElement>(null);
-  const links = [{ href: OFFER.path, label: 'Sites internet & maintenance' }, ...SECTION_LINKS.map(l => ({ ...l, href: commerce && l.href !== '#contact' ? '/' + l.href : l.href }))];
+  const links = [{ href: OFFER.path, label: 'Sites & maintenance' }, ...SECTION_LINKS.map(l => ({ ...l, href: commerce && l.href !== '#contact' ? '/' + l.href : l.href }))];
   useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 30); window.addEventListener('scroll', onScroll, { passive: true }); onScroll(); return () => window.removeEventListener('scroll', onScroll); }, []);
   useEffect(() => {
     if (commerce || !('IntersectionObserver' in window)) return;
