@@ -20,14 +20,14 @@ const body = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://novasoft.mu'),
-  title: 'NovaSoft — Agents IA & automatisation métier · Île Maurice',
+  title: 'NovaSoft — Sites, IA & automatisation · Île Maurice',
   description:
-    "Studio digital à l'Île Maurice : agents IA, LLM, skills métier et automatisation, plateformes web & SaaS. Nous connectons l'IA à vos outils et vos processus.",
+    "Studio digital à l'Île Maurice : sites et e-commerce, IA, automatisation, intégrations API et applications métier. Des solutions pensées pour vendre, simplifier et faire gagner du temps.",
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'NovaSoft — Agents IA & automatisation métier',
+    title: 'NovaSoft — Sites, IA & automatisation',
     description:
-      "Agents IA, automatisation métier, plateformes web & SaaS. Nous connectons l'IA à vos outils, vos données et vos processus.",
+      "Sites et e-commerce, agents IA, automatisation et intégrations API. NovaSoft conçoit des solutions digitales utiles, modernes et maintenables.",
     url: 'https://novasoft.mu',
     siteName: 'NovaSoft',
     locale: 'fr_FR',
@@ -70,7 +70,7 @@ const JSON_LD = {
       image: 'https://novasoft.mu/og.jpg',
       slogan: 'Digital Xperience',
       description:
-        "Studio digital mauricien : agents IA, LLM, skills métier et automatisation, plateformes web et SaaS, sécurité.",
+        "Studio digital mauricien : sites et e-commerce, agents IA, automatisation, intégrations API, applications métier et sécurité.",
       email: 'support@novasoft.mu',
       identifier: { '@type': 'PropertyValue', name: 'BRN', value: 'C25226236' },
       address: {
@@ -107,10 +107,11 @@ const JSON_LD = {
         '@type': 'OfferCatalog',
         name: 'Expertises',
         itemListElement: [
-          'Stratégie digitale',
-          'Intelligence artificielle — agents, LLM, skills métier, automatisation',
-          'Développement web, plateformes SaaS et APIs',
-          'Sécurité et DevSecOps',
+          'Création et refonte de sites internet et e-commerce',
+          'Intelligence artificielle — agents, assistants et automatisation métier',
+          'Intégrations API, synchronisation de données et workflows',
+          'Développement web, plateformes SaaS et applications métier',
+          'Maintenance, sécurité et évolution',
         ].map((name) => ({
           '@type': 'Offer',
           itemOffered: { '@type': 'Service', name },
@@ -121,7 +122,7 @@ const JSON_LD = {
       '@type': 'WebPage',
       '@id': 'https://novasoft.mu/#webpage',
       url: 'https://novasoft.mu/',
-      name: 'NovaSoft — Agents IA & automatisation métier · Île Maurice',
+      name: 'NovaSoft — Sites, IA & automatisation · Île Maurice',
       inLanguage: 'fr-FR',
       isPartOf: { '@id': 'https://novasoft.mu/#website' },
       about: { '@id': 'https://novasoft.mu/#organization' },
