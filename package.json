@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/assemble-logo.mjs",
+    "prebuild": "node scripts/assemble-logo.mjs && node scripts/prepare-commerce-assets.mjs",
     "build": "next build",
     "start": "next start"
   },

@@ -1,0 +1,9 @@
+.links { gap: clamp(16px,2vw,28px); }
+@media (max-width: 1100px) {
+  .links { display: none !important; }
+  .toggle { display: flex !important; }
+  .cta { display: none !important; }
+}
+.menu { max-height: calc(100dvh - 72px); overflow-y: auto; }
+.links a[aria-current] { color: var(--text); }
+.links a[aria-current]::after { right: 0; }
