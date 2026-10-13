@@ -1,8 +1,25 @@
 # STATE — Site vitrine NovaSoft
 
-Dernière mise à jour : 2026-08-30 (2)
+Dernière mise à jour : 2026-10-13 — preview commerciale refactorée et auditée
 
 ## ✅ Fait
+
+### Preview commerciale 13 octobre 2026 — non publiée en production
+
+- Architecture commerciale : navigation restructurée autour de trois offres lisibles : Sites & e-commerce, IA & automatisation, Intégrations & API ; Réalisations, À propos et Contact complètent le parcours.
+- Accueil : hero orienté bénéfices avec Command Center NovaSoft natif, démonstration visuelle de l'écosystème, bénéfices business et accès directs aux trois offres.
+- Sites & e-commerce : page /sites-internet-maintenance/ avec offre approuvée 2 490 € HT, maintenances optionnelles 129 € / 299 € HT/mois, comparateur décisionnel desktop/mobile, bénéfices de refonte, FAQ, conditions et bonus partenaires RoG Hunting conformes à la suite NovaSoft 1.1.4.
+- IA & automatisation : nouvelle page /ia-automatisation/ avec démonstration Jarvis / agents, usages concrets et circuit demande → analyse → validation → résultat.
+- Intégrations & API : nouvelle page /integrations-api/ avec schéma API natif, cas d'usage, exemple revendeur RoG Hunting et limites explicites.
+- À propos : nouvelle page /a-propos/, principes Build → Integrate → Automate et identité légale.
+- Contact : route serveur /api/contact créée mais désactivée par défaut. Activation conditionnée par confidentialité + Resend + Turnstile + destinations autorisées. La preview ne peut envoyer aucun message.
+- SEO / métadonnées : titles, descriptions, Open Graph/Twitter, canonicals et sitemap étendus. Toute preview est noindex, nofollow.
+- Confidentialité : notice rendue cohérente avec le formulaire actif/inactif.
+- Responsive / accessibilité : Playwright + axe sur 7 routes en desktop 1440 px et mobile 390 px : 14/14 HTTP 200, aucun overflow, un seul H1 par page, aucune erreur console et aucune violation axe.
+- Lighthouse mobile preview : accueil 94, e-commerce 89, IA 90, API 94, À propos 96 en Performance ; Accessibilité 100 et Bonnes pratiques 100. CLS = 0 partout. SEO 69 uniquement à cause du noindex volontaire de la preview.
+- Audit fonctionnel : aucun lien de route testé cassé, aucune image cassée, sélection de maintenance correctement propagée au formulaire ; POST /api/contact retourne 503 contrôlé tant que l'envoi est fermé.
+- Logo partenaire officiel RoG Hunting × NovaSoft vérifié au build par SHA-256, aucune transformation.
+- Branche de travail : preview/sites-maintenance-20261013. La production novasoft.mu reste inchangée.
 
 - **Setup** : 22 skills en scope projet (`.claude/skills/`), CLAUDE.md, HTML de référence committés.
 - **Scaffold** : Next.js 14.2 App Router + TypeScript + Tailwind, `output: 'export'`,
@@ -76,11 +93,13 @@ Dernière mise à jour : 2026-08-30 (2)
 
 ## 🔄 En cours
 
-- Rien.
+- Validation visuelle finale de Ylliano sur la preview.
+- Aucun déploiement production autorisé à ce stade.
 
 ## ⏭️ Prochain pas
 
-1. Audit ui-ux-pro-max complet sur device réel (le score perf local est mesuré
-   en WebGL logiciel — sur GPU réel, le shader est bien plus léger).
-2. Production + domaine novasoft.mu.
-3. OG image dédiée (1200×630) si souhaité.
+1. Validation explicite de la preview par Ylliano.
+2. Décider si le formulaire doit être activé ; si oui, confirmer confidentialité, destinataire, expéditeur NovaSoft, Resend et Turnstile puis effectuer un test uniquement vers l'adresse autorisée.
+3. Revalider la fiscalité avant toute affirmation générale supplémentaire ; les prix publics restent HT et les taxes sont précisées au devis.
+4. Vérifier le statut actuel de Google Search Console avant soumission du sitemap si ce point n'a pas déjà été traité hors de ce dépôt.
+5. Après validation uniquement : fusion contrôlée et publication production, avec rollback disponible.
