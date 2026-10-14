@@ -24,7 +24,7 @@ export function MissionCommandCenter(){
     <aside className={styles.sidebar} aria-hidden="true"><strong>NovaSoft</strong><span className={styles.navActive}>Vue d’ensemble</span><span>Agents IA</span><span>Automatisations</span><span>Documents</span><span>Intégrations</span></aside>
     <div className={styles.main}>
      <small className={styles.eyebrow}>VOTRE ESPACE DE TRAVAIL</small>
-     <h3>Une consigne.<br/><em>Les bons spécialistes.</em></h3>
+     <div className={styles.previewHeadline}>Une consigne.<br/><em>Les bons spécialistes.</em></div>
      <div className={styles.prompt}><Icon name="spark" size={15}/><span>Que souhaitez-vous accomplir ?</span><b>→</b></div>
      <div className={styles.agentsTitle}><strong>Une équipe IA sur mesure</strong><span>Choisissez un exemple</span></div>
      <div className={styles.tabs} role="tablist" aria-label="Exemples d’assistants NovaSoft">
