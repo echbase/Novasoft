@@ -5,3 +5,8 @@
 .mediaPoster figcaption{position:absolute;right:12px;bottom:12px;left:12px;width:max-content;max-width:calc(100% - 24px);padding:8px 12px;border-radius:8px;background:rgb(var(--bg-rgb)/.84);font-size:11px;color:var(--text)}
 @media(max-width:980px){.mediaPoster{width:min(100%,620px)}.mediaImage{height:470px}}
 @media(max-width:620px){.mediaPoster{border-radius:15px}.mediaImage{height:350px;object-position:center 40%}.mediaPoster figcaption{font-size:9px}}
+
+/* Nouvelle composition visuelle native pour les pages IA et API. */
+.nativeVisual{position:relative;min-width:0;width:100%;display:grid;place-items:center}
+.nativeVisual>*{width:100%}
+@media(max-width:980px){.nativeVisual{max-width:670px;margin-inline:auto}}
