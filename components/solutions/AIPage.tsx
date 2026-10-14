@@ -27,7 +27,7 @@ export default function AIPage(){
    <div className={styles.grid}>{cards.map(([name,desc],i)=><article className={styles.card} key={name}><span>{String(i+1).padStart(2,'0')}</span><h3>{name}</h3><p>{desc}</p></article>)}</div>
   </section>
 
-  <section className={\`\${styles.section} \${styles.sectionAlt}\`}>
+  <section className={styles.section+' '+styles.sectionAlt}>
    <div className={styles.sectionHead}><span className={styles.eyebrow}>COMMENT ÇA MARCHE ?</span><h2>Simple à comprendre.<br/><span className={styles.accent}>Pensé pour travailler.</span></h2></div>
    <div className={styles.flow}>
     {[
